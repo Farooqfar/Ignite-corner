@@ -1,65 +1,101 @@
-import Image from "next/image";
+"use client";
+import { useState, useEffect } from "react";
+import DecryptedText from "@/components/DecryptedText";
+import Galaxy from "@/components/Galaxy";
+import logo from "@/../public/logo.jpeg";
+import { Skiper19 } from "@/components/skippertext";
+import ScrollReveal from "@/components/ScrollReveal";
+import MetricsSection from "@/components/MetricsSection";
+import ServicesSection from "@/components/servicesection";
+import HeroSection from "@/components/home";
+import WorkSection from "@/components/WorkSection";
+import AboutSection from "@/components/AboutSection";
+import ContactSection from "@/components/ContactSection";
+import Navbar from "@/components/nav";
 
 export default function Home() {
+  const [isOpen, setIsOpen] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
+
+  // Logo asset link placeholder - Replace with your actual path (e.g., "/logo.png")
+  const logoSrc = "/path-to-your-logo/image_17649d.png";
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 50) {
+        setIsScrolled(true);
+      } else {
+        setIsScrolled(false);
+      }
+    };
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
   return (
-    <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex flex-1 w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.js file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
+    <>
+      {/* --- PREMIUM BRAND-ALIGNED NAVBAR --- */}
+      {/* --- PREMIUM BRAND-ALIGNED NAVBAR --- */}
+      <Navbar />
+
+      {/* --- BRAND-ALIGNED PREMIUM HERO SECTION --- */}
+      <section id="home">
+        <HeroSection />
+      </section>
+
+      {/* --- CONTENT SECTION --- */}
+      <section
+        id="services"
+        className="relative w-full min-h-screen bg-[#fcfcfc] text-slate-900 flex flex-col justify-center items-center py-20 px-6 md:px-12 lg:px-24 overflow-hidden"
+      >
+        {/* Elegant background radial glow using your brand gold #FBB80A tuned for soft white contrast */}
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_40%,rgba(251,184,10,0.12),transparent_65%)] pointer-events-none" />
+
+        <div className="max-w-5xl w-full mx-auto z-10 flex flex-col space-y-6 md:space-y-8">
+          {/* Clean, Professional Section Label */}
+          <div className="flex items-center space-x-3">
+            <div className="w-8 h-[2px] bg-[#eab308]" />{" "}
+            {/* Tailored crisp gold line */}
+            <span className="text-[#ca8a04] font-mono tracking-widest uppercase text-xs md:text-sm font-bold">
+              Our Core Philosophy
+            </span>
+          </div>
+
+          {/* The Core Heading in Deep Premium Dark Blue */}
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-black tracking-tight leading-tight max-w-3xl text-slate-950">
+            We Build High-Performance Digital Solutions.
+          </h2>
+
+          {/* Clean separation line optimized for the soft white background */}
+          <div className="w-full h-[1px] bg-slate-200/80 my-2" />
+
+          {/* Your Original ScrollReveal Text Block in High-Contrast Dark Blue */}
+          <div className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-extrabold tracking-tight uppercase leading-relaxed md:leading-snug text-slate-900">
+            <ScrollReveal>
+              MOST MARKETING SITES ARE SLOW, GENERIC, AND COSTING YOU LEADS. WE
+              BUILD THE ALTERNATIVE: FAST, HIGH-PERFORMANCE WEBSITES DESIGNED TO
+              TURN VISITORS INTO CUSTOMERS. BUILT USING FRAMER, WEBFLOW, OR
+              CUSTOM SOLUTIONS. WHATEVER YOUR BUSINESS ACTUALLY NEEDS.
+            </ScrollReveal>
+          </div>
         </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
-        </div>
-      </main>
-    </div>
+      </section>
+
+      <div>
+        <MetricsSection />
+      </div>
+      <div>
+        <ServicesSection />
+      </div>
+      <div>
+        <WorkSection />
+      </div>
+      <div>
+        <AboutSection />
+      </div>
+      <div>
+        <ContactSection />
+      </div>
+    </>
   );
 }
