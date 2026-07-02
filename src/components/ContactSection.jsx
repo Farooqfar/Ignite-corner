@@ -727,27 +727,6 @@ export default function ContactSection() {
         </div>
 
         {/* ─── Bottom Trust Bar ─── */}
-        <div className="mt-20 sm:mt-28 pt-10 border-t border-[#1e3a5f]/20">
-          <div className="flex flex-col sm:flex-row items-center justify-between gap-6">
-            <p className="text-xs text-[#5a7090] tracking-wide">
-              © 2024 Ignite Corner. All rights reserved.
-            </p>
-            <div className="flex items-center gap-8">
-              <a
-                href="#"
-                className="text-xs text-[#5a7090] hover:text-[#f1b418] transition-colors tracking-wide"
-              >
-                Privacy Policy
-              </a>
-              <a
-                href="#"
-                className="text-xs text-[#5a7090] hover:text-[#f1b418] transition-colors tracking-wide"
-              >
-                Terms of Service
-              </a>
-            </div>
-          </div>
-        </div>
       </div>
     </section>
   );

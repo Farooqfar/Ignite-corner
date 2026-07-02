@@ -93,8 +93,12 @@ export default function Home() {
       <div>
         <AboutSection />
       </div>
+
       <div>
         <ContactSection />
+      </div>
+      <div className="overflow-hidden">
+        <Skiper19 />
       </div>
     </>
   );
