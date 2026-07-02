@@ -29,7 +29,7 @@ const Skiper19 = () => {
         />
       </div>
 
-      <div className="rounded-4xl font-jakarta-sans w-full translate-y-[200vh] bg-[#0A0B0C] pb-10 text-[#FAFDEE]">
+      <div className="rounded-4xl font-jakarta-sans w-full translate-y-[200vh] bg-[#0A0B0C] pb-10 text-[#F8F9FB]">
         <h1 className="mt-10 text-center text-[13.5vw] font-bold leading-[0.9] tracking-tighter lg:text-[13vw]">
           IGNITE CORNER
         </h1>
